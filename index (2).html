@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aulas ao vivo — David Nussbaum | Milhas do Zero</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Barlow',sans-serif;background:#0F1712;color:#fff;}
+.wrap{max-width:480px;margin:0 auto;}
+
+/* TOPBAR */
+.topbar{background:#00CC44;padding:18px 20px;text-align:center;}
+.topbar-title{font-size:15px;font-weight:800;color:#0F1712;letter-spacing:.5px;text-transform:uppercase;margin-bottom:10px;}
+.timer{font-size:26px;font-weight:800;color:#0F1712;letter-spacing:1px;margin-bottom:12px;}
+.topbar-sub{font-size:15px;color:#0F1712;line-height:1.5;font-weight:600;}
+.topbar-sub strong{font-weight:800;}
+
+/* CARD (DOBRA 1) */
+.card-section{padding:24px 16px;}
+.card{background:#e9efe9;border-radius:14px;padding:32px 24px;text-align:center;color:#0F1712;}
+.logo{display:flex;flex-direction:column;align-items:center;margin-bottom:24px;}
+.logo-img{width:140px;height:auto;filter:invert(1) sepia(1) saturate(5) hue-rotate(75deg) brightness(0.9);}
+.headline{font-size:22px;font-weight:600;line-height:1.4;color:#0F1712;margin-bottom:24px;}
+.headline strong{font-weight:800;}
+.live-badge{background:#00CC44;border-radius:10px;padding:16px 18px;font-size:15px;font-weight:700;color:#0F1712;line-height:1.4;display:flex;align-items:flex-start;gap:10px;text-align:left;margin-bottom:24px;}
+.live-badge .check{flex-shrink:0;font-size:18px;}
+.live-badge strong{font-weight:800;}
+.fields{display:flex;flex-direction:column;gap:14px;margin-bottom:16px;}
+.fields input{background:#fff;border:2px solid #ccd6cc;border-radius:8px;padding:14px 16px;font-size:15px;font-family:'Barlow',sans-serif;color:#0F1712;outline:none;width:100%;}
+.fields input::placeholder{color:#8a958a;}
+.fields input:focus{border-color:#00CC44;}
+.btn{width:100%;background:#00CC44;color:#0F1712;font-size:17px;font-weight:800;padding:18px;border:none;border-radius:8px;cursor:pointer;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;}
+.btn:hover{background:#00e84d;}
+.consent{display:flex;align-items:flex-start;gap:8px;text-align:left;font-size:12px;color:#4a5e4a;line-height:1.5;}
+.consent input{flex-shrink:0;margin-top:2px;width:18px;height:18px;accent-color:#00CC44;}
+
+/* DOBRA 2 — BENEFICIOS */
+.benefits{padding:48px 16px;background:#0a1009;}
+.benefits-title{font-size:22px;font-weight:800;text-align:center;line-height:1.35;margin-bottom:28px;}
+.benefits-title span{color:#00CC44;}
+.cards{display:flex;flex-direction:column;gap:14px;}
+.bcard{background:#162019;border:1px solid #1f3524;border-radius:10px;padding:20px;font-size:14px;color:#9ab89f;line-height:1.6;text-align:center;}
+.bcard span{color:#00CC44;font-weight:700;}
+
+/* DOBRA 3 — QUEM E O DAVID */
+.about{padding:48px 16px;background:#0F1712;}
+.about-img{width:100%;max-width:280px;display:block;margin:0 auto 28px;border-radius:12px;}
+.about-title{font-size:24px;font-weight:800;text-align:center;margin-bottom:20px;text-decoration:underline;text-decoration-color:#00CC44;text-underline-offset:6px;}
+.about-text{font-size:14px;color:#a8b8ab;line-height:1.7;margin-bottom:14px;}
+.about-text strong{color:#fff;}
+.about-list{display:flex;flex-direction:column;gap:10px;margin-top:20px;}
+.about-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:#a8b8ab;line-height:1.5;}
+.about-item strong{color:#fff;}
+.about-check{color:#00CC44;font-size:17px;flex-shrink:0;margin-top:1px;}
+
+/* FOOTER CTA */
+.footer-cta{padding:32px 16px 48px;background:#0a1009;text-align:center;}
+.footer-cta .btn{margin-bottom:0;}
+.footer-text{font-size:13px;color:#7a9e80;margin-bottom:16px;line-height:1.5;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-title">A aula ao vivo começa em...</div>
+    <div class="timer" id="timer">00d 00h 00m 00s</div>
+    <div class="topbar-sub">Conteúdo 100% prático sobre milhas e turismo, direto ao ponto: <strong>viaje gastando menos ou transforme isso num negócio.</strong></div>
+  </div>
+
+  <!-- DOBRA 1 — FORM -->
+  <div class="card-section">
+    <div class="card">
+      <div class="logo">
+        <img src="assets/logo.png" alt="Milhas do Zero" class="logo-img">
+      </div>
+      <div class="headline">Eu vou te ensinar a <strong>pagar até 70% menos</strong> em passagens aéreas, toda semana!</div>
+      <div class="live-badge">
+        <span class="check">&#10003;</span>
+        <span>AULAS AO VIVO, GRATUITAS, <strong>TODA QUARTA-FEIRA</strong>, ÀS 15H.</span>
+      </div>
+      <div class="fields">
+        <input type="text" placeholder="Digite seu nome...">
+        <input type="tel" placeholder="Digite seu whatsapp com DDD...">
+        <input type="email" placeholder="Digite o seu melhor e-mail*">
+      </div>
+      <button class="btn">Participar das aulas</button>
+      <label class="consent">
+        <input type="checkbox" checked>
+        <span>Ao se inscrever você aceita receber comunicação de David Nussbaum. Ao clicar no botão você será enviado diretamente para uma comunidade no WhatsApp.</span>
+      </label>
+    </div>
+  </div>
+
+  <!-- DOBRA 2 — BENEFICIOS -->
+  <div class="benefits">
+    <h2 class="benefits-title">Veja o que acontece quando você tem acesso aos <span>bastidores de quem realmente entende do mercado.</span></h2>
+    <div class="cards">
+      <div class="bcard">Conteúdo gratuito com o passo a passo do que realmente funciona em <span>milhas e turismo</span>. Sem enrolação, sem teoria.</div>
+      <div class="bcard">Estratégias aplicadas por quem já ajudou <span>mais de 2.000 pessoas</span> a viajar melhor e a lucrar com o mercado aéreo.</div>
+      <div class="bcard">O que o David entrega de graça tem <span>curso por aí cobrando caro</span> e nem chegando perto. Você vê o que ninguém mais mostra.</div>
+    </div>
+  </div>
+
+  <!-- DOBRA 3 — QUEM E O DAVID -->
+  <div class="about">
+    <img class="about-img" src="assets/davi.png" alt="David Nussbaum">
+    <h2 class="about-title">Quem é o David Nussbaum.</h2>
+    <p class="about-text"><strong>David Nussbaum</strong>, carioca, morador de São Paulo, 26 anos, apaixonado por viagens e desde 2022 no mercado do turismo.</p>
+    <p class="about-text">Em 2020 comecei a estudar muito sobre viagens e passagens aéreas, até que conheci o mundo das milhas aéreas durante a pandemia em 2021 — e descobri que poderia viajar de forma muito mais barata e ainda criar uma nova fonte de renda extra.</p>
+    <p class="about-text">Em julho de 2022 decidi ajudar outras pessoas a realizarem esse mesmo sonho. Hoje já são <strong>mais de 2.000 alunos e clientes</strong> que aprenderam a viajar melhor gastando menos.</p>
+    <div class="about-list">
+      <div class="about-item"><span class="about-check">&#10003;</span><span><strong>+2.000</strong> alunos e clientes desde julho de 2022</span></div>
+      <div class="about-item"><span class="about-check">&#10003;</span><span>Mais de <strong>20 destinos</strong> internacionais já visitados</span></div>
+      <div class="about-item"><span class="about-check">&#10003;</span><span>Mais de <strong>10 cabines</strong> executivas e primeiras classes</span></div>
+      <div class="about-item"><span class="about-check">&#10003;</span><span><strong>Especialista</strong> em turismo e milhas desde 2022</span></div>
+    </div>
+  </div>
+
+  <!-- FOOTER CTA -->
+  <div class="footer-cta">
+    <p class="footer-text">A aula é gratuita, ao vivo e toda quarta. Garanta sua vaga agora.</p>
+    <button class="btn">Quero participar das aulas</button>
+  </div>
+
+</div>
+
+<script>
+function getNextWed(){
+  var now=new Date();
+  var d=new Date(now);
+  var day=d.getDay();
+  var diff=(3-day+7)%7||7;
+  d.setDate(d.getDate()+diff);
+  d.setHours(15,0,0,0);
+  return d;
+}
+function pad(n){return n<10?'0'+n:n;}
+function tick(){
+  var target=getNextWed();
+  var now=new Date();
+  var diff=Math.max(0,target-now);
+  var days=Math.floor(diff/86400000);
+  var hrs=Math.floor((diff%86400000)/3600000);
+  var mins=Math.floor((diff%3600000)/60000);
+  var secs=Math.floor((diff%60000)/1000);
+  document.getElementById('timer').textContent=pad(days)+'d '+pad(hrs)+'h '+pad(mins)+'m '+pad(secs)+'s';
+}
+tick();
+setInterval(tick,1000);
+</script>
+</body>
+</html>
